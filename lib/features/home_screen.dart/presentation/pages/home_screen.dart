@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  void _getLocationAndGoToMapScreen() {
+    
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Nigger")),
-      body: Container(
-        height: 200,
-        width: double.infinity,
-        child: FlutterMap(
-          mapController: MapController(),
-          options: MapOptions(),
-          children: [
-            TileLayer(
-              urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-              userAgentPackageName: 'dev.fleaflet.flutter_map.example',
-              // + many other options
-            ),
-          ],
+      body: Center(
+        child: TextButton(
+          onPressed: _getLocationAndGoToMapScreen,
+          child: Text("Click to get Location"),
         ),
       ),
     );
